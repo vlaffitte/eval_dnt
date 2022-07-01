@@ -4,8 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js",
+    "test": "mocha",
+    "lint": "eslint . --ext .js"
   },
   "author": "vlaffitte",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.18.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "swagger-jsdoc": "^6.2.1",
+    "swagger-ui-express": "^4.4.0"
+  }
 }
