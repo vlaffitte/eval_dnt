@@ -14,6 +14,6 @@ const {
 /// Users Routes 
 //////////////////
 
-router.get('/users', getAllUsers); 
+router.get('/', getAllUsers);
 
-module.exports = router;
+module.exports = router; 

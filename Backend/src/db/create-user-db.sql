@@ -11,9 +11,12 @@ CREATE TABLE IF NOT EXISTS user
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL, 
     email VARCHAR(100) UNIQUE NOT NULL, 
-    role ENUM('Admin', 'SuperUser') DEFAULT 'SuperUser', 
+    role ENUM('Admin', 'User') DEFAULT 'User', 
     age INT(11) DEFAULT 0
 );
+
+INSERT INTO user
+VALUES (1, "toto", "passwordd", "dupuy", "toto", "tt@toto.com", "User", 25);
 
 DROP TABLE IF EXISTS anime; 
 CREATE TABLE IF NOT EXISTS anime
