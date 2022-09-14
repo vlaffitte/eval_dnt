@@ -9,6 +9,7 @@ const express = require('express');
 // Importation des routes
 // ----------------------------------------------
 const animeRoute = require('./routes/anime.route');
+const userRoute = require('./routes/user.route');
 const docRoute = require('./routes/swagger.route');
 
 
@@ -28,6 +29,7 @@ server.set('json spaces', 2); // Permet de formatter la réponse pour respecter 
 // ----------------------------------------------
 server.use('/api/v1', docRoute);
 server.use('/api/v1/animes', animeRoute);
+server.use('/api/v1/users', userRoute);
 
 
 // ----------------------------------------------

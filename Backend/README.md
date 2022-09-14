@@ -5,6 +5,4 @@ docker build . -t vlaffitte/node-web-app
 
 docker ps
 
-docker run -p 8080:8080 -d vlaffitte/node-web-app
-
- docker container logs ff2e948c8bdc
+docker run -p 8081:8081 -d vlaffitte/node-web-app

@@ -26,5 +26,5 @@ CREATE TABLE IF NOT EXISTS anime
 );
 
 INSERT INTO anime
-VALUES (1, "le titre est sueper", 3, 25, "la description blabla");
+VALUES (1, "Le titre est super", 3, 25, "la description blabla");
 

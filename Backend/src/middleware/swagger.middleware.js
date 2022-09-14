@@ -10,7 +10,7 @@ const swaggerGeneration = {
     swaggerDefinition: {
         openapi: "3.0.0",
         info: {
-            title: 'anApiOfMangasAndAnimes',
+            title: 'anApiOfForDntProject',
             version: '0.1.0'
         },
         servers: [

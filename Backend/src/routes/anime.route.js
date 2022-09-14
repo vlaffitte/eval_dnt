@@ -7,7 +7,6 @@ const router = require('express').Router();
 // Définition de l'enssembles des constantes utilisant le controller
 // ----------------------------------------------
 const {
-    getTest,
     getAllAnimes,
     getAnimeById,
     getAnimeByName,
@@ -15,6 +14,8 @@ const {
     updateAnimeById,
     deleteAnimeById
 } = require('../controllers/anime.controller');
+
+
 
 // ----------------------------------------------
 // ------------ Définition des routes -----------
@@ -31,5 +32,6 @@ router.post('/', createAnime); // POST localhost:8081/api/v1/animes
 router.patch('/:id', updateAnimeById); // PATCH localhost:8081/api/v1/animes/:id
 
 router.delete('/:id', deleteAnimeById); // DELETE localhost:8081/api/v1/animes/:id
+
 
 module.exports = router;
