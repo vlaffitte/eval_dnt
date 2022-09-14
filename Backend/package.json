@@ -2,9 +2,9 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon src/server.js",
     "test": "mocha",
     "lint": "eslint . --ext .js"
   },
@@ -15,7 +15,8 @@
   },
   "dependencies": {
     "dotenv": "^16.0.1",
-    "swagger-jsdoc": "^6.2.1",
-    "swagger-ui-express": "^4.4.0"
+    "mysql": "^2.18.1",
+    "swagger-jsdoc": "^6.2.5",
+    "swagger-ui-express": "^4.5.0"
   }
 }
