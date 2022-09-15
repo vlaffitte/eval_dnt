@@ -31,6 +31,7 @@ const swaggerGeneration = {
 
 const swaggerOptions = swaggerJsDoc(swaggerGeneration);
 
+
 // ----------------------------------------------
 // Permet de trier dans la documentation par type de requette HTTP
 // ----------------------------------------------

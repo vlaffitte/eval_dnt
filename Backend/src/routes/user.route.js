@@ -10,6 +10,7 @@ const {
     getAllUsers, createUser
 } = require('../controllers/user.controller');
 
+
 // -------------
 // Users Routes 
 // -------------
