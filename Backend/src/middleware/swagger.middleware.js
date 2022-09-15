@@ -10,7 +10,7 @@ const swaggerGeneration = {
     swaggerDefinition: {
         openapi: "3.0.0",
         info: {
-            title: 'anApiOfForDntProject',
+            title: 'DntProjectApiDoc',
             version: '0.1.0'
         },
         servers: [
@@ -18,6 +18,13 @@ const swaggerGeneration = {
                 url: "http://localhost:8081/api/v1",
             },
         ],
+        tags: [
+            {
+                "name": "User",
+                "description": "Endpoints"
+            }
+        ],
+    
     },
     apis: ['src/routes/*.js'] // récupère l'ensemble des commentaires swagger venant des fichiers .js du dossier routes
 };

@@ -13,6 +13,7 @@ const getConfigSwagger = require('../middleware/swagger.middleware');
 // ------------ Définition des routes -----------
 // ----------------------------------------------
 
+
 router.use('/doc', swaggerUi.serve);
 router.get('/doc', swaggerUi.setup(getConfigSwagger.swaggerOptions, getConfigSwagger.swaggerSortByHTTPRequest));
 

@@ -8,9 +8,9 @@ const express = require('express');
 // ----------------------------------------------
 // Importation des routes
 // ----------------------------------------------
-const animeRoute = require('./routes/anime.route');
-const userRoute = require('./routes/user.route');
-const docRoute = require('./routes/swagger.route');
+// const animeRoute = require('./routes/anime.route');
+const userRoute = require('./src/routes/user.route');
+const docRoute = require('./src/routes/swagger.route');
 
 
 // ----------------------------------------------
@@ -28,8 +28,8 @@ server.set('json spaces', 2); // Permet de formatter la réponse pour respecter 
 // Déclaration des endpoints
 // ----------------------------------------------
 server.use('/api/v1', docRoute);
-server.use('/api/v1/animes', animeRoute);
-server.use('/users', userRoute);
+// server.use('/api/v1/animes', animeRoute);
+server.use('/api/v1/users', userRoute);
 
 
 // ----------------------------------------------
