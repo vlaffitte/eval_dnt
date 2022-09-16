@@ -28,7 +28,6 @@ server.set('json spaces', 2); // Permet de formatter la réponse pour respecter 
 // Déclaration des endpoints
 // ----------------------------------------------
 server.use('/api/v1', docRoute);
-// server.use('/api/v1/animes', animeRoute);
 server.use('/api/v1/users', userRoute);
 
 
