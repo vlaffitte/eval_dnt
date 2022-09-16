@@ -20,8 +20,8 @@ const swaggerGeneration = {
         ],
         tags: [
             {
-                "name": "User",
-                "description": "Endpoints"
+                "name": "User"
+                // "description": "Endpoints"
             }
         ],
     

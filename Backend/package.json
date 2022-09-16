@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
-    "test": "mocha",
+    "test": "npx mocha ./src/tests/**/*.test.js",
     "lint": "eslint . --ext .js",
     "swagger-autogen": "node src/routes/user.route.js"
   },
@@ -19,6 +19,6 @@
     "mysql": "^2.18.1",
     "swagger-jsdoc": "^6.2.5",
     "swagger-ui-express": "^4.5.0",
-    "swagger-autogen": "^2.21.8"
+    "unit.js": "^2.1.1"
   }
 }
