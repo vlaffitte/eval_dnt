@@ -48,17 +48,33 @@ describe('Test API User', function() {
     test
       .array(res.body);
   });
-  it('should get an user', async function() {
+
+  it('should create an user', async function() {
     const res = await test
       .httpAgent(apiUrl)
-      .get('/users')
+      .post('/users')
+      .send('12', 'userNameTest', 'Pass', 'firstNameTest', 'lastNameTest', 'email@test', 'Admin',  '32' )
+      //.send({id: 12, username: 'userNameTest', password:'Pass', first_name:'firstNameTest', last_name:'lastNameTest', email:'email@test', role:'Admin', age: 32 })
+      .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
-      .expect(200);
+      .expect(201);
 
     let user = res.body;
 
-    test
-      .array(res.body);
+    user.should.be.an.Object();
+    user.id.should.be.ok;
+    // // Mongo ID should be 24 chars
+    // article.id.length.should.be.equal(24);
+    // article.title.should.equal('article de test');
+    // article.content.should.equal('le contenu article test');
+
+    // test
+    //   .string(article.createdAt)
+    //   .bool(article.createdAt <= Date.now)
+
+    //   .string(article.updatedAt)
+    //   .isEqualTo(article.createdAt)
+    ;
   });
 
 });

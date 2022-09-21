@@ -22,15 +22,7 @@ getAllUsers = (request, response) => {
 // Créer un nouvel enregistrement en BDD
 // ----------------------------------------------
 createUser = (request, response) => {
-     // #swagger.tags = ['User']
-        // #swagger.description = 'Endpoint para obter um usuário.'
-        // #swagger.parameters['id'] = { description: 'ID do usuário.' }
 
-        /* #swagger.parameters['filtro'] = {
-	       in: 'query',
-               description: 'Um filtro qualquer.',
-               type: 'string'
-        } */
     // Vérification si la requette est complété (le JSON)
     // le request.body permet de récupérer le contenue de la requette
     if (!request.body) {
@@ -40,6 +32,7 @@ createUser = (request, response) => {
     }
 
     // Sauvegarde du nouvel enregistrement dans le BDD
+
     userModel.createUser(new userModel.UserConstructor(request.body), (error, data) => {
         if (error)
             response.status(500).send({
@@ -48,7 +41,7 @@ createUser = (request, response) => {
             });
         else response.send(data);
     });
-};
+}
 
 // ----------------------------------------------
 // Supprimer un user par son ID

@@ -6,27 +6,29 @@ const dataBase = require('../db/db-connection');
 // ----------------------------------------------
 // Création d'un constructeur pour la création et la mise à jour des enregistrements
 // ----------------------------------------------
-const UserConstructor = function (user) {
-    this.id = user.id;
-    this.username = user.username;
-    this.password = user.password;
-    this.first_name = user.first_name;
-    this.last_name = user.last_name;
-    this.email = user.email;
-    this.role = user.role;
-    this.age = user.age;
-};
+class UserConstructor {
+    constructor(user) {
+        this.id = user.id;
+        this.username = user.username;
+        this.password = user.password;
+        this.first_name = user.first_name;
+        this.last_name = user.last_name;
+        this.email = user.email;
+        this.role = user.role;
+        this.age = user.age;
+    }
+}
 
 // ----------------------------------------------
 // Récupérer l'ensembles des users
 // ----------------------------------------------
-getAllUsers = result_bdd_request => {
-    dataBase.query("SELECT * FROM user", (error, response) => {
-        if (error) {
-            result_bdd_request(error);
+getAllUsers = (done) => {
+    dataBase.query("SELECT * FROM user", (err, res) => {
+        if (err) {
+            done(err);
         }
         // Le premier null représente les erreurs
-        result_bdd_request(null, response);
+        done(null, res);
     });
 };
 
@@ -35,13 +37,20 @@ getAllUsers = result_bdd_request => {
 // Créer un nouvel user en BDD
 // ----------------------------------------------
 
-createUser = (newUser, result_bdd_request) => {
-    dataBase.query('INSERT INTO user SET id = ?, username = ?, password = ?, first_name = ?, last_name = ?, email = ?, role = ?, age = ?' [newUser.id, newUser.username, newUser.password, newUser.first_name, newUser.last_name, newUser.email, newUser.role, newUser.age ],
-        (error, response) => {
+createUser = (newUser, done) => {
+    //console.log('INSERT INTO user SET id = ?, username = ?, password = ?, first_name = ?, last_name = ?, email = ?, role = ?, age = ?');
+    // console.log(newUser);
+    
+    dataBase.query(
+        'INSERT INTO user SET id = ?, username = ?, password = ?, first_name = ?, last_name = ?, email = ?, role = ?, age = ?', [newUser.id, newUser.username, newUser.password, newUser.first_name, newUser.last_name, newUser.email, newUser.role, newUser.age],
+    // dataBase.query('INSERT INTO user SET id = 15, username = "rtr", password = "rerer", first_name = "reer", last_name = "reer", email = "reerer", role = "Admin", age = 32',
+    (error, result, fields) => {
             if (error) {
-                result_bdd_request(error);
+                done(error);
             }
-            result_bdd_request(null, { id: response.insertId, ...newUser });
+            console.log("created user:  ", { id: done.insertId, ...newUser });
+            done(null, { id: result.insertId, ...newUser });
+
         });
 };
 
