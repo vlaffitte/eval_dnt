@@ -1,0 +1,22 @@
+<h2>My Formations</h2>
+
+<div class="container" >
+   <div *ngFor="let formation of formations"> 
+
+      <div class="card">
+        <div class="card__header">
+          <img src={{formation.img}} alt="card__image" class="card__image" width="600">
+        </div>
+        <div class="card__body">
+          <a routerLink="/detail/{{formation.id}}">
+            <span class="badge">{{formation.id}} </span>
+            <span class="card__title">{{formation.name}}</span>
+          </a>
+          <span class="tag tag-blue">Technology</span>
+          <p>{{formation.description}}</p>
+        </div>
+      </div>
+    </div>
+   
+</div>
+<app-formation-detail [formation]="selectedFormation"></app-formation-detail>

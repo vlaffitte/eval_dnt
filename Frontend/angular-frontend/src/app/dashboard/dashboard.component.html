@@ -1,0 +1,6 @@
+<h2>Top Formations</h2>
+<div class="formations-menu">
+  <a *ngFor="let formation of formations" routerLink="/detail/{{formation.id}}">
+    {{formation.name}}
+  </a>
+</div>

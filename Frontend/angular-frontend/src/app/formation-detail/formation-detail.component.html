@@ -1,0 +1,9 @@
+<div *ngIf="formation">
+    <h2>{{formation.name | uppercase}} Details</h2>
+    <div>id: {{formation.id}}</div>
+    <div>
+      <button type="button" (click)="goBack()">go back</button>
+      <label for="formation-name">Formation name: </label>
+      <input id="formation-name" [(ngModel)]="formation.name" placeholder="name">
+    </div>
+  </div>

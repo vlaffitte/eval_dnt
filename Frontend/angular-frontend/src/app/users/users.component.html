@@ -1,0 +1,26 @@
+<p>users works!</p>
+<div class="container">
+<div *ngFor="let user of users">
+  <div class="card">
+    <div class="user">
+      <img src= "{{user.img}}" alt="user__image" class="user__image" height = "90">
+      <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVhi5o2LmnsiLvMqQ7bPlpoIUwxXqv1smoHoxtptQVCQ&s" alt="user__image" class="user__image"> -->
+
+      <div class="user__info">
+        <h5>{{ user.username }}</h5>
+        <small>{{ user.email }}</small>
+        <p>{{ user.role }} </p>
+        <p>{{ user.first_name }}  {{ user.last_name }}</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+
+
+<!-- <td><a [routerLink]="['edit', user.id]">{{ user.id }}</a></td> -->
+   
+            
