@@ -16,6 +16,7 @@ class UserConstructor {
         this.email = user.email;
         this.role = user.role;
         this.age = user.age;
+        this.img = user.img;
     }
 }
 
@@ -42,7 +43,7 @@ createUser = (newUser, done) => {
     // console.log(newUser);
     
     dataBase.query(
-        'INSERT INTO user SET id = ?, username = ?, password = ?, first_name = ?, last_name = ?, email = ?, role = ?, age = ?', [newUser.id, newUser.username, newUser.password, newUser.first_name, newUser.last_name, newUser.email, newUser.role, newUser.age],
+        'INSERT INTO user SET id = ?, username = ?, password = ?, first_name = ?, last_name = ?, email = ?, role = ?, age = ?, img=?', [newUser.id, newUser.username, newUser.password, newUser.first_name, newUser.last_name, newUser.email, newUser.role, newUser.age, newUser.img],
     // dataBase.query('INSERT INTO user SET id = 15, username = "rtr", password = "rerer", first_name = "reer", last_name = "reer", email = "reerer", role = "Admin", age = 32',
     (error, result, fields) => {
             if (error) {

@@ -27,7 +27,7 @@ createUser = (request, response) => {
     // le request.body permet de récupérer le contenue de la requette
     if (!request.body) {
         response.status(400).send({
-            message: "Le contenue ne peut être vide !"
+            message: "Le contenu ne peut être vide !"
         });
     }
 
@@ -39,7 +39,7 @@ createUser = (request, response) => {
                 message:
                     error.message || "Des erreurs sont apparues en créant le nouvel user."
             });
-        else response.send(data);
+        else response.status(201).send(data);
     });
 }
 

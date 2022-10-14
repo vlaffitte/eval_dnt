@@ -2,6 +2,7 @@
 
 // load Unit.js module
 const test = require('unit.js');
+
 const User = require('../models/user.model');
 
 const apiUrl = 'http://localhost:8081/api/v1';
@@ -53,7 +54,17 @@ describe('Test API User', function() {
     const res = await test
       .httpAgent(apiUrl)
       .post('/users')
-      .send('12', 'userNameTest', 'Pass', 'firstNameTest', 'lastNameTest', 'email@test', 'Admin',  '32' )
+      .send({
+        id: '12341',
+        username: 'userNameTesttt',
+        password: 'Pass',
+        first_name: 'firstcdNameTest', 
+        last_name: 'lastNamedTest', 
+        email: 'email@tecdst', 
+        role: 'Admin', 
+        age : '32' ,
+        img : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHDW4D03RxIM2Qeke5kFqh_ktIv60vpgUErMNnMxzt&s'
+      })
       //.send({id: 12, username: 'userNameTest', password:'Pass', first_name:'firstNameTest', last_name:'lastNameTest', email:'email@test', role:'Admin', age: 32 })
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
@@ -76,6 +87,23 @@ describe('Test API User', function() {
     //   .isEqualTo(article.createdAt)
     ;
   });
+
+  it('should delete an user', async function() {
+  
+    const res = await test
+      .httpAgent(apiUrl)
+      .delete('/users/' + '12341')
+      .set('Accept', 'application/json')
+      .expect('Content-Type', /json/)
+      .expect(200);
+
+    let user = res.body;
+
+    user.should.be.an.Object();
+ 
+  });
+
+
 
 });
 
