@@ -1,3 +1,10 @@
+# Run locally
+// "start": "ng serve --proxy-config proxy.conf.json",
+npm start
+docker build -t eval-frontend .
+docker run  -i -t  eval-frontend /bin/bash
+
+
 # AngularFrontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.3.
